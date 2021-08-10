@@ -11,7 +11,7 @@ Terraformを使用しAWS上にFessを起動するサンプル
 ## Requirement
 
 - Terraformがインストールされていること
-- AWSのプロファイルが存在し、EC2やネットワーク系リソースの作成権限があること
+- AWS CLIがインストールされており、EC2やネットワーク系リソースの作成権限があること
 
 ## Installation
 
@@ -21,7 +21,8 @@ git clone https://github.com/inayuky/terraform-fess-sample
 
 ## Usage
 
-環境変数`AWS_DEFAULT_PROFILE`に使用するAWSのプロファイル名を設定する。
+AWSの認証情報を環境変数で設定する。  
+たとえば、環境変数`AWS_DEFAULT_PROFILE`に使用するAWSのプロファイル名を設定する。
 
 ```
 export AWS_DEFAULT_PROFILE=aws-profile-name
