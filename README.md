@@ -15,29 +15,36 @@ EC2以外に作成するのはネットワーク系リソースのみ。(デフ�
 ## Installation
 
 ```
-git clone https://github.com/inayuky/terraform-fess-sample
+$ git clone https://github.com/inayuky/terraform-fess-sample
+$ cd terraform-fess-sample
+$ terraform init
 ```
 
 ## Usage
 
-環境変数`AWS_DEFAULT_PROFILE`に使用するAWSのプロファイル名を設定する。
+環境変数にAWSの認証情報を設定する。
 
 ```
-export AWS_DEFAULT_PROFILE=aws-profile-name
+$ export AWS_ACCESS_KEY_ID="aws-accesskey"
+$ export AWS_SECRET_ACCESS_KEY="aws-secretkey"
+```
+
+または、認証情報を設定済みのAWSプロファイル名を設定する。
+
+```
+$ export AWS_DEFAULT_PROFILE="aws-profilename"
 ```
 
 `terraform plan`で問題ないことを確認する。
 
 ```
-cd terraform-fess-sample
-terraform init
-terraform plan
+$ terraform plan
 ```
 
 `terraform apply`で作成する。
 
 ```
-terraform apply
+$ terraform apply
 ```
 
 以下のように作成が完了し、EC2のpublic ipが出力されることを確認する。
@@ -81,7 +88,7 @@ public_ip = "13.231.227.218"
 動作確認が終わったら、削除する。
 
 ```
-terraform destroy
+$ terraform destroy
 ```
 
 ## License
