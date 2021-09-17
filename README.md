@@ -4,13 +4,14 @@
 Terraformを使用しAWS上にFessを起動するサンプル
 
 ## Features
-EC2起動時にFessをインストールするスクリプトを実行することで、TerraformによってAWSリソース作成からFessインストールまでを自動化している。
-EC2以外に作成するのはネットワーク系リソースのみ。(デフォルトリソースの使用は避けている)
+- EC2起動時にFessをインストールするスクリプトを実行することで、TerraformによってAWSリソース作成からFessインストールまでを自動化している。  
+- EC2以外に作成するのはネットワーク系リソースのみ。(デフォルトリソースの使用は避けている)  
+- 東京リージョンに作成される。
 
 ## Requirement
 
 - Terraformがインストールされていること
-- AWSのプロファイルが存在し、EC2やネットワーク系リソースの作成権限があること
+- AWS CLIがインストールされており、EC2やネットワーク系リソースの作成権限があること
 
 ## Installation
 
@@ -35,7 +36,7 @@ $ export AWS_SECRET_ACCESS_KEY="aws-secretkey"
 $ export AWS_DEFAULT_PROFILE="aws-profilename"
 ```
 
-`terraform plan`で問題ないことを確認する。
+`terraform plan`でエラーが出力されないことを確認する。
 
 ```
 $ terraform plan
@@ -84,6 +85,8 @@ public_ip = "13.231.227.218"
 ```
 
 ブラウザ等で`http://public_ip:8080`にアクセスし、Fessの画面が表示されたら成功。(Fessが起動するまで数分かかる)
+
+![](2021-08-10-16-03-24.png)
 
 動作確認が終わったら、削除する。
 
